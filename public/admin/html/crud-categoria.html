@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CRUD de Empleados</title>
+        <!--bootstrap-->
+        <link rel="stylesheet" href="../../bootstrap/bootstrap.min.css">
+    </head>
+    <body>
+        <!--Barra de navegacion-->
+        <nav class="navbar navbar-expand-lg" style="background-color: #E8CB9A;">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Navbar</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ms-auto">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  <a class="nav-link" href="#">Features</a>
+                  <a class="nav-link" href="#">Pricing</a>
+                  <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                </div>
+              </div>
+            </div>
+          </nav>
+          <!--Fin de barra de navegacion-->
+        <div class="container my-5">
+            <div class="row">
+
+                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                    <h2>Registrar nueva categoria</h2>
+                    <!--Formulario-->
+                    <form action="" id="Formulario">
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre de la categoria</label>
+                            <input type="text" class="form-control" id="nombre" placeholder="Nombre de la categoria">
+                        </div>
+                          <div class="mb-3">
+                            <label for="descripcion" class="form-label">Descripcion</label>
+                            <textarea class="form-control" id="descripcion" rows="3" placeholder=""></textarea>
+                        </div>
+
+                        <div id="botones">
+
+                        </div>
+                    </form>
+                    <!--Fin del formulario-->
+                </div>
+                <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                    <h2>Listado de las Categorias</h2>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Descripcion</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="listarCategorias">
+    
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <script src="../../bootstrap/bootstrap.min.js"></script>
+        <script src="../js/crud-categoria.js"></script>
+    </body>
+</html>

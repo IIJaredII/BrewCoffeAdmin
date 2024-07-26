@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CRUD de Empleados</title>
+        <!--bootstrap-->
+        <link rel="stylesheet" href="../../bootstrap/bootstrap.min.css">
+    </head>
+    <body>
+        <!--Barra de navegacion-->
+        <nav class="navbar navbar-expand-lg" style="background-color: #E8CB9A;">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Navbar</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ms-auto">
+                  <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                  <a class="nav-link" href="#">CRUDs</a>
+                  <a class="nav-link" href="#">Reportes</a>
+                  <a class="nav-link" href="#">Cerrar sesion</a>
+                <!-- <a class="nav-link disabled" aria-disabled="true">Disabled</a> -->
+                </div>
+              </div>
+            </div>
+          </nav>
+          <!--Fin de barra de navegacion-->
+        <div class="container my-5">
+            <div class="row">
+
+                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                    <h2>Registrar nuevo producto</h2>
+                    <!--Formulario-->
+                    <form action="">
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre del producto</label>
+                            <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+                        </div>
+                        <div class="mb-3">
+                            <label for="categoria" class="form-label">Categoria</label>
+                            <select class="form-select" aria-label="Default select example" id="categoria">
+                                <option selected>Seleccione una categoria</option>
+                                <option value="1">Bebidas calientes</option>
+                                <option value="2">Bebidas frias</option>
+                                <option value="3">Raspados</option>
+                                <option value="4">Postres</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="correo" class="form-label">Correo</label>
+                            <input type="email" class="form-control" id="correo" placeholder="ejemplo@ejemplo.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="direccion" class="form-label">Direccion</label>
+                            <textarea class="form-control" id="direccion" rows="3" placeholder="direccion del empleado"></textarea>
+                        </div>
+                        <button class="btn btn-success">Registrar</button>
+                        <button class="btn">Limpiar</button>
+                    </form>
+                    <!--Fin del formulario-->
+                </div>
+                <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                    <h2>Listado de los Productos</h2>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre del producto</th>
+                                <th>Cantidad de variantes</th>
+                                <th>Categoria</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <script src="../../bootstrap/bootstrap.min.js"></script>
+    </body>
+</html>
