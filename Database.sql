@@ -74,6 +74,7 @@ CREATE TABLE Ventas (
 CREATE TABLE Detalles_venta (
     ID_venta INT NOT NULL,
     ID_producto INT NOT NULL,
+    Tamaño_porcion VARCHAR(50),
     Cantidad INT NOT NULL,
     Precio DECIMAL(10, 2),
     Comentario VARCHAR(100),
