@@ -1,72 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>CRUD de Empleados</title>
-        <!--bootstrap-->
-        <link rel="stylesheet" href="../../bootstrap/bootstrap.min.css">
-    </head>
-    <body>
-        <!--Barra de navegacion-->
-        <nav class="navbar navbar-expand-lg" style="background-color: #E8CB9A;">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">Navbar</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD de Categorías</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../../bootstrap/bootstrap.min.css">
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .form-container, .table-container {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            background-color: #fff;
+            margin: 10px;
+            width: 100%;
+            max-width: 700px;
+        }
+
+        .form-container h2, .table-container h2 {
+            text-align: center;
+        }
+
+        .form-label {
+            font-weight: bold;
+        }
+
+        .form-control {
+            margin-bottom: 15px;
+        }
+
+        .btn-container {
+            text-align: center;
+        }
+
+        .btn-container button {
+            margin: 5px;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .table th, .table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .table th {
+            background-color: #f4f4f4;
+            font-weight: bold;
+        }
+
+        .table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .table tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg" style="background-color: #E8CB9A;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto">
-                  <a class="nav-link active" aria-current="page" href="#">Home</a>
-                  <a class="nav-link" href="#">Features</a>
-                  <a class="nav-link" href="#">Pricing</a>
-                  <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                </div>
-              </div>
-            </div>
-          </nav>
-          <!--Fin de barra de navegacion-->
-        <div class="container my-5">
-            <div class="row">
-
-                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                    <h2>Registrar nueva categoria</h2>
-                    <!--Formulario-->
-                    <form action="" id="Formulario">
-                        <div class="mb-3">
-                            <label for="nombre" class="form-label">Nombre de la categoria</label>
-                            <input type="text" class="form-control" id="nombre" placeholder="Nombre de la categoria">
-                        </div>
-                          <div class="mb-3">
-                            <label for="descripcion" class="form-label">Descripcion</label>
-                            <textarea class="form-control" id="descripcion" rows="3" placeholder=""></textarea>
-                        </div>
-
-                        <div id="botones">
-
-                        </div>
-                    </form>
-                    <!--Fin del formulario-->
-                </div>
-                <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8">
-                    <h2>Listado de las Categorias</h2>
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Nombre</th>
-                                <th>Descripcion</th>
-                                <th>Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody id="listarCategorias">
-    
-                        </tbody>
-                    </table>
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" href="#">Features</a>
+                    <a class="nav-link" href="#">Pricing</a>
+                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
                 </div>
             </div>
         </div>
-        <script src="../../bootstrap/bootstrap.min.js"></script>
-        <script src="../js/crud-categoria.js"></script>
-    </body>
+    </nav>
+    <!-- Fin de la barra de navegación -->
+
+    <div class="container">
+        <div class="row">
+            <!-- Formulario de registro de categoría -->
+            <div class="form-container">
+                <h2>Registrar nueva categoría</h2>
+                <!-- Formulario -->
+                <form id="categoryForm">
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre de la categoría</label>
+                        <select class="form-control" id="nombre" required>
+                            <option value="" disabled selected>Seleccione una categoría</option>
+                            <option value="Bebidas calientes">Bebidas calientes</option>
+                            <option value="Bebidas frías">Bebidas frías</option>
+                            <option value="Raspados">Raspados</option>
+                            <option value="Postres">Postres</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="descripcion" class="form-label">Descripción</label>
+                        <textarea class="form-control" id="descripcion" rows="3" placeholder="Descripción de la categoría" required></textarea>
+                    </div>
+                    <div class="btn-container">
+                        <button type="submit" class="btn btn-success">Registrar</button>
+                        <button type="reset" class="btn btn-secondary">Limpiar</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Tabla de categorías -->
+            <div class="table-container">
+                <h2>Listado de las Categorías</h2>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="categoryTableBody">
+                        <!-- Las filas se agregarán dinámicamente aquí -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Incluyendo el archivo JavaScript de Bootstrap -->
+    <script src="../../bootstrap/bootstrap.min.js"></script>
+    <script>
+        // JavaScript para manejar el registro de categorías y la actualización de la tabla
+        document.getElementById('categoryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Obtener los valores del formulario
+            const nombre = document.getElementById('nombre').value;
+            const descripcion = document.getElementById('descripcion').value;
+
+            // Crear un nuevo ID único
+            const id = Date.now();
+
+            // Crear la nueva fila de la tabla
+            const newRow = `
+                <tr id="row-${id}">
+                    <td>${nombre}</td>
+                    <td>${descripcion}</td>
+                    <td>
+                        <button class="btn btn-warning btn-sm" onclick="editCategory(${id})">Editar</button>
+                        <button class="btn btn-danger btn-sm" onclick="deleteCategory(${id})">Eliminar</button>
+                    </td>
+                </tr>
+            `;
+
+            // Añadir la nueva fila a la tabla
+            document.getElementById('categoryTableBody').insertAdjacentHTML('beforeend', newRow);
+
+            // Limpiar el formulario
+            document.getElementById('categoryForm').reset();
+        });
+
+        // Función para eliminar una categoría
+        function deleteCategory(id) {
+            const row = document.getElementById(`row-${id}`);
+            if (row) {
+                row.remove();
+            }
+        }
+
+        // Función para editar una categoría
+        function editCategory(id) {
+            const row = document.getElementById(`row-${id}`);
+            if (row) {
+                const nombre = row.cells[0].textContent;
+                const descripcion = row.cells[1].textContent;
+                
+                // Rellenar el formulario con los valores actuales
+                document.getElementById('nombre').value = nombre;
+                document.getElementById('descripcion').value = descripcion;
+
+                // Eliminar la fila actual
+                row.remove();
+            }
+        }
+    </script>
+</body>
 </html>
