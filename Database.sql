@@ -91,3 +91,33 @@ CREATE TABLE bitacora (
     Tipo_evento INT NOT NULL,
     Descripcion VARCHAR(150)
 );
+
+
+/*Procedimientos almacenados-----------------------------------------------------------------------------------------------------*/
+
+DELIMITER //
+
+CREATE PROCEDURE listar_productos()
+BEGIN
+    SELECT p.ID_producto, p.nombre, c.Nombre AS Categoria, COUNT(tp.ID_producto) AS Variantes
+    FROM productos p
+    INNER JOIN tamano_porcion tp ON p.id_producto = tp.id_producto
+    INNER JOIN categorias_producto c ON p.ID_categoria = c.ID_categoria
+    WHERE p.estado = 1
+    GROUP BY p.ID_producto, p.nombre, c.Nombre;
+END //
+
+DELIMITER ;
+
+
+DELIMITER //
+
+CREATE PROCEDURE listar_categorias()
+BEGIN
+    SELECT * 
+    FROM categorias_producto
+    WHERE ID_categoria = 1;
+END //
+
+DELIMITER ;
+/*-----------------------------------------------------------------------------------------------------*/

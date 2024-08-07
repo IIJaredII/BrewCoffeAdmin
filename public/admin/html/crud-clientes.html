@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRUD de Empleados</title>
-    <link rel="shortcut icon" href="./../img/logo 1.png">
+    <title>CRUD de clientes</title>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="../../bootstrap/bootstrap.min.css">
 </head>
@@ -42,6 +41,7 @@
                             <option selected>Mostrar todos</option>
                             <option value="1">Buscar por ID</option>
                             <option value="2">Buscar por nombre</option>
+                            <option value="3">Buscar por telefono</option>
                           </select>  
                     </div>
                     <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
@@ -51,21 +51,20 @@
                         <button type="button" class="btn btn-success mb-3">Buscar</button>
                     </div>
                 </div>
-                <div style="height: 62vh; overflow-y: auto;">
-                    <table class="table table-striped" style="table-layout: fixed; width: 100%;">
-                        <thead>
-                            <tr>
-                                <th style="width: 10%;">ID</th>
-                                <th style="width: 20%;">Nombre</th>
-                                <th style="width: 55%;">Descripcion</th>
-                                <th style="width: 15%;">Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody id="listarCategorias">
-                            <!-- El contenido de las categorías se agregará dinámicamente aquí -->
-                        </tbody>
-                    </table>
-                </div>
+                <table class="table table-striped" style="table-layout: fixed; width: 100%;">
+                    <thead>
+                        <tr>
+                            <th style="width: 10%;">ID</th>
+                            <th style="width: 25%;">Nombre</th>
+                            <th style="width: 20%;">Telefono</th>
+                            <th style="width: 25%;">Correo</th>
+                            <th style="width: 20%;">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="listarCategorias">
+                        <!-- El contenido de las categorías se agregará dinámicamente aquí -->
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>

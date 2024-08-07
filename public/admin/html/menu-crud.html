@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu de los CRUD</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../../bootstrap/bootstrap.min.css">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg" style="background-color: #E8CB9A;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="./../img/Logo claro.png" alt="Logo" width="40" height="40" class="d-inline-block align-text-top">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link" href="#">Dashboard</a>
+                    <a class="nav-link active" aria-current="page" href="#">CRUDs</a>
+                    <a class="nav-link" href="#">Reportes</a>
+                    <a class="nav-link" href="#">Cerrar sesion</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-3">
+        <div class="row g-4" id="crud-productos">
+            <div class="col-sm-12 col-md-6 col-lg-3">
+                <div class="card">
+                    <img src="./../img/card-productos.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">CRUD de productos: aquí usted podrá listar, agregar, editar y eliminar los productos que
+                        se mostrarán en el menú de los clientes y de los empleados.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-3" id="crud-categoria">
+                <div class="card" onclick="window.location.href='/admin/categoria/crud'">
+                    <img src="./../img/card-categoria.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">CRUD de categorías: En esta sección usted podrá listar, agregar, editar y eliminar las categorías
+                        de los productos. Las categorías son muy importantes para el filtrado de productos.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-3" id="crud-clientes">
+                <div class="card">
+                    <img src="./../img/card-clientes.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">
+                            CRUD de clientes: aquí usted podrá listar, editar y eliminar a los clientes existentes, tambien
+                            podra registrar un nuevo cliente.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-3" id="crud-empleados">
+                <div class="card">
+                    <img src="./../img/card-empleados.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">
+                            CRUD de empleados: aquí usted podrá listar, agregar, editar y eliminar los empleados del local,
+                            cada empleado agregado tendra acceso a las funciones de empleados
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="../../bootstrap/bootstrap.min.js"></script>
+    <style>
+
+    </style>
+</body>
+</html>
