@@ -60,8 +60,6 @@ CREATE TABLE Ventas (
     ID_cliente BIGINT NOT NULL,
     ID_empleado BIGINT NOT NULL,
     Fecha_venta DATETIME NOT NULL,
-    Subtotal DECIMAL(10, 2),
-    Isv DECIMAL(10, 2),
     Total DECIMAL(10, 2),
     Estado INT, 
     Tipo_venta INT,
