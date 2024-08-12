@@ -1,0 +1,255 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-container {
+    max-width: 60%;
+    margin-right: 20px;
+}
+
+.menu-item {
+    background-color: #fff;
+    padding: 20px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.menu-item h2 {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.size-select, .quantity-input {
+    margin-right: 10px;
+    padding: 5px;
+}
+
+.add-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-btn:hover {
+    background-color: #0056b3;
+}
+
+.order-summary {
+    max-width: 35%;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+#order-list {
+    list-style: none;
+    padding: 0;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.order-item button {
+    margin-left: 10px;
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+    background-color: #dc3545;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.order-item button:hover {
+    background-color: #c82333;
+}
+
+#process-order-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #28a745;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#process-order-btn:hover {
+    background-color: #218838;
+}
+
+#order-message {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    border-radius: 4px;
+    display: none; /* Oculto por defecto */
+}
+
+.payment-panel {
+    display: none;
+    max-width: 35%;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.card-container {
+    margin-bottom: 20px;
+}
+
+.card {
+    width: 300px;
+    height: 180px;
+    background: linear-gradient(135deg, #f05a28, #ec008c);
+    border-radius: 15px;
+    color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.card-number, .card-expiry, .card-cvv {
+    margin: 0;
+    padding: 0;
+}
+
+.card-number {
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+.card-expiry, .card-cvv {
+    font-size: 16px;
+    position: absolute;
+}
+
+.card-expiry {
+    bottom: 20px;
+    left: 20px;
+}
+
+.card-cvv {
+    bottom: 20px;
+    right: 20px;
+}
+
+#payment-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#payment-form label {
+    margin-top: 10px;
+}
+
+#payment-form input {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#payment-form button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f05a28;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#payment-form button:hover {
+    background-color: #ec008c;
+}
+
+#success-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    border-radius: 4px;
+    display: none; /* Oculto por defecto */
+    z-index: 1000; /* Asegura que el mensaje esté encima de otros elementos */
+}
+
+#pagar:disabled {
+    background-color: #d3d3d3; /* Color gris */
+    color: #6c757d; /* Color del texto */
+    cursor: not-allowed;
+}
+
+
+/*style menu_cards*/
+.cards-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.card-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 30%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.card-item h2 {
+    margin-bottom: 10px;
+}
+
+.card-item p {
+    color: #777;
+}
+
+.card-btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.card-btn:hover {
+    background-color: #0056b3;
+}

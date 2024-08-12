@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú del Restaurante</title>
+    <link rel="stylesheet" href="/admin/css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div id="menu-container" class="menu-container">
+            <h1>Menú del Restaurante</h1>
+        </div>
+        <div id="order-panel" class="order-summary">
+            <h2>Resumen del Pedido</h2>
+            <ul id="order-list"></ul>
+            <p id="total-display">Total: $0.00</p> <!-- Elemento para mostrar el total -->
+            <button id="process-order-btn">Siguiente</button>
+            <div id="order-message"></div> <!-- Mensaje debajo del botón -->
+        </div>
+        <div id="payment-panel" class="payment-panel" style="display: none;">
+            <h2>Pago</h2>
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-name" id="card-name-display">NOMBRE EN LA TARJETA</div>
+                    <div class="card-number" id="card-number-display">XXXX XXXX XXXX XXXX</div>
+                    <div class="card-expiry" id="card-expiry-display">MM/AA</div>
+                    <div class="card-cvv" id="card-cvv-display">CVV</div>
+                </div>
+            </div>
+            <form id="payment-form">
+                <label for="card-name">Nombre en la Tarjeta:</label>
+                <input type="text" id="card-name" name="card-name" required>
+
+                <label for="card-number">Número de Tarjeta:</label>
+                <input type="text" id="card-number" name="card-number" maxlength="19" required>
+
+                <label for="card-expiry">Fecha de Expiración:</label>
+                <input type="text" id="card-expiry" name="card-expiry" maxlength="5" placeholder="MM/AA" required>
+
+                <label for="card-cvv">CVV:</label>
+                <input type="text" id="card-cvv" name="card-cvv" maxlength="3" required>
+
+                <button id="pagar" type="submit">Pagar</button>
+            </form>
+        </div>
+        <div id="success-message" class="success-message" style="display: none;">
+            Pago exitoso!
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/imask/6.2.2/imask.min.js"></script>
+    <script src="../js/menu-pedidos.js"></script>
+</body>
+
+</html>
