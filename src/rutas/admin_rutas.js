@@ -14,6 +14,10 @@ router.get('/empleados/crud', (req, res) => {
 router.get('/categoria/crud', (req, res) => {
     res.sendFile(path.join(__dirname, '../../public/admin/html', 'crud-categoria.html'));
 });
+
+router.get('/venta', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../public/admin/html', 'menu-pedidos.html'));
+});
 //-----------------------------------------------------------------------------------------------------
 
 //categorias-------------------------------------------------------------------------------------------
@@ -26,5 +30,11 @@ router.put('/categoria/eliminar/:id', admin.eliminarCategoria);
 //empleados--------------------------------------------------------------------------------------------
 router.get('/empleados/listar', admin.listarEmpleados);
 //-----------------------------------------------------------------------------------------------------
+
+//menu-pedidos--------------------------------------------------------------------------------------------
+router.get('/menu/ventas', admin.menuPedidos);
+router.get('/menu/admin/porciones/:id', admin.menuPorciones);
+router.post('/menu/admin/ventas', admin.menuVentas);
+
 
 module.exports=router;
