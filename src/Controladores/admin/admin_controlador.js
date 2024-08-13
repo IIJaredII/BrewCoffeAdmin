@@ -141,8 +141,8 @@ exports.eliminarProducto = (req, res) => {
         res.status(200).json({ message: 'Categoría eliminada exitosamente' });
     });
 };
-//Menu-Pedidos-----------------------------------------------------------------------------------------------------
-exports.menuPedidos = (req, res) => {
+//Menu Pedidos-----------------------------------------------------------------------------------------------------
+exports.menuProductos = (req, res) => {
     const query = 'SELECT ID_producto, Nombre FROM productos';
     db.query(query, (err, results) => {
         if (err) {
