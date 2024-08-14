@@ -12,8 +12,9 @@ loginForm.addEventListener('submit', async (event) => {
         body: JSON.stringify({ correo, password })
     });
 
-    const result = await response.json();
     if (response.ok) {
+        const result = await response.json();
+        console.log('nombre: ',result.nombre);
         localStorage.setItem('token', result.token);
         localStorage.setItem('id', result.id);
         localStorage.setItem('nombre', result.nombre);

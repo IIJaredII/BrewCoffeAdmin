@@ -15,6 +15,14 @@ router.get('/categoria/crud', (req, res) => {
     res.sendFile(path.join(__dirname, '../../public/admin/html', 'crud-categoria.html'));
 });
 
+router.get('/productos/crud', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../public/admin/html', 'crud-producto.html'));
+});
+
+router.get('/menu/crud',(req,res) =>{
+    res.sendFile(path.join(__dirname, '../../public/admin/html', 'menu-crud.html'));
+});
+
 router.get('/venta', (req, res) => {
     res.sendFile(path.join(__dirname, '../../public/admin/html', 'menu-pedidos.html'));
 });
@@ -28,7 +36,8 @@ router.put('/categoria/eliminar/:id', admin.eliminarCategoria);
 //-----------------------------------------------------------------------------------------------------
 
 //empleados--------------------------------------------------------------------------------------------
-router.get('/empleados/listar', admin.listarEmpleados);
+router.post('/empleado/crear',admin.crearEmpleado);
+router.get('/empleado/listar', admin.listarEmpleados);
 //-----------------------------------------------------------------------------------------------------
 
 //menu-pedidos--------------------------------------------------------------------------------------------

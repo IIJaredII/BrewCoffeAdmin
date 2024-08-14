@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos pendientes</title>
+    <link rel="shortcut icon" href="./../img/logo1.png">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../../bootstrap/bootstrap.min.css">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg" style="background-color: #E8CB9A;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="./../img/Logo claro.png" alt="Logo" width="40" height="40" class="d-inline-block align-text-top">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" href="#">Features</a>
+                    <a class="nav-link" href="#">Pricing</a>
+                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Fin de barra de navegación -->
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6" id="pedidos-local" style="height: 62vh; overflow-y: auto;">
+                <!-- El contenido del formulario se agregará dinámicamente aquí -->
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6" id="pedidos-online" style="height: 62vh; overflow-y: auto;">
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="../../bootstrap/bootstrap.min.js"></script>
+    <script src="/empleado/js/pedidos-pendientes.js"></script>
+</body>
+</html>
