@@ -13,10 +13,12 @@ app.use(express.json());
 //declaraciones
 const r_cliente=require('./src/rutas/cliente_ruta.js');
 const r_admin = require('./src/rutas/admin_rutas.js');
+const r_empleado = require('./src/rutas/empleado_rutas.js');
 
 //usos-------------------------------------------------------------------------------------------------
 app.use('/admin',r_admin);
 app.use('/',r_cliente);
+app.use('/empleado',r_empleado);
 //-----------------------------------------------------------------------------------------------------
 
 //Algunas direcciones -----------------------------------------------------------------------------------------------------
