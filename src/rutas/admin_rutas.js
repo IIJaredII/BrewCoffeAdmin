@@ -15,6 +15,10 @@ router.get('/categoria/crud', (req, res) => {
     res.sendFile(path.join(__dirname, '../../public/admin/html', 'crud-categoria.html'));
 });
 
+router.get('/cliente/crud', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../public/admin/html', 'crud-clientes.html'));
+});
+
 router.get('/productos/crud', (req, res) => {
     res.sendFile(path.join(__dirname, '../../public/admin/html', 'crud-producto.html'));
 });
@@ -38,6 +42,13 @@ router.put('/categoria/eliminar/:id', admin.eliminarCategoria);
 //empleados--------------------------------------------------------------------------------------------
 router.post('/empleado/crear',admin.crearEmpleado);
 router.get('/empleado/listar', admin.listarEmpleados);
+//-----------------------------------------------------------------------------------------------------
+
+//Clienetes-----------------------------------------------------------------------------------------------------
+router.post('/cliente/crear', admin.crearCliente);
+router.get('/cliente/listar', admin.listarClientes);
+router.put('/cliente/actualizar/:id', admin.actualizarCliente);
+router.put('/cliente/eliminar/:id', admin.eliminarCliente);
 //-----------------------------------------------------------------------------------------------------
 
 //menu-pedidos--------------------------------------------------------------------------------------------

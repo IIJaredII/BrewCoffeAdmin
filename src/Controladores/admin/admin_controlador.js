@@ -200,6 +200,75 @@ exports.eliminarEmpleado = (req, res) => {
         res.status(200).json({ message: 'Categoría eliminada exitosamente' });
     });
 };
+
+//clientes-----------------------------------------------------------------------------------------------------
+exports.crearCliente = (req, res) => {
+    const { id, nombre, telefono, correo } = req.body;
+
+    if (!nombre || !telefono || !correo) {
+        return res.status(400).json({ message: 'Todos los campos son requeridos' });
+    }
+
+    const validarCorreo = 'SELECT * FROM clientes WHERE LOWER(Correo) = LOWER(?)';
+    db.query(validarCorreo, [correo], (err, results) => {
+        if (err) throw err;
+        if (results.length > 0) {
+            return res.status(400).json({ message: 'Ya existe un cliente con ese correo' });
+        }
+
+        const cliente = 'INSERT INTO clientes (ID_cliente, Nombre, Telefono, Correo, Estado) VALUES (?, ?, ?, ?, ?)';
+        db.query(cliente, [id ,nombre, telefono, correo, 1], (err) => {
+            if (err) throw err;
+            res.status(201).json({ message: 'El cliente se ha registrado correctamente' });
+        });
+    });
+};
+
+exports.listarClientes = (req, res) => {
+    const { opc, dato } = req.query;
+    
+    let query = 'SELECT * FROM clientes WHERE Estado = 1';
+    const params = [];
+    switch (parseInt(opc)) {
+        case 1:
+            query += ' AND ID_cliente = ?';
+            params.push(dato);
+            break;
+        
+        case 2:
+            query += ' AND LOWER(Nombre) LIKE LOWER(?)';
+            params.push(`%${dato}%`);
+            break;
+        
+        default:
+            break;
+    }
+    db.query(query, params, (err, results) => {
+        if (err) throw err;
+        res.json(results);
+    });
+};
+
+exports.actualizarCliente = (req, res) => {
+    const { id } = req.params;
+    const { nombre, telefono, correo } = req.body;
+    const query = 'UPDATE clientes SET Nombre = ?, Telefono = ?, Correo = ? WHERE ID_cliente = ?';
+    db.query(query, [nombre, telefono, correo, id], (err) => {
+        if (err) throw err;
+        res.status(200).json({ message: 'Cliente actualizado exitosamente' });
+    });
+};
+
+exports.eliminarCliente = (req, res) => {
+    const { id } = req.params;
+    const query = 'UPDATE clientes SET Estado = ? WHERE ID_cliente = ?';
+    db.query(query, [0, id], (err) => {
+        if (err) throw err;
+        res.status(200).json({ message: 'Cliente eliminado exitosamente' });
+    });
+};
+
+//-----------------------------------------------------------------------------------------------------
 //Menu Pedidos-----------------------------------------------------------------------------------------------------
 exports.menuProductos = (req, res) => {
     const query = 'SELECT ID_producto, Nombre FROM productos';

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD de Clientes</title>
+    <link rel="shortcut icon" href="./../img/logo 1.png">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../../bootstrap/bootstrap.min.css">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg" style="background-color: #E8CB9A;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="./../img/Logo claro.png" alt="Logo" width="40" height="40" class="d-inline-block align-text-top">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" href="#">Features</a>
+                    <a class="nav-link" href="#">Pricing</a>
+                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Fin de barra de navegación -->
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" id="Formulario">
+                <!-- El contenido del formulario se agregará dinámicamente aquí -->
+            </div>
+            <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                <h2>Listado de Clientes</h2>
+                <div class="row">
+                    <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                        <select class="form-select mb-3" aria-label="Default select example" id="opcion">
+                            <option value="0" selected>Mostrar todos</option>
+                            <option value="1">Buscar por ID</option>
+                            <option value="2">Buscar por nombre</option>
+                        </select>  
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                        <input class="form-control mb-3" type="text" id="dato">
+                    </div>
+                    <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                        <button type="button" class="btn btn-success mb-3" onclick="fetchClientes()">Buscar</button>
+                    </div>
+                </div>
+                <div style="height: 62vh; overflow-y: auto;">
+                    <table class="table table-striped" style="table-layout: fixed; width: 100%;">
+                        <thead>
+                            <tr>
+                                <th style="width: 25%;">ID</th>
+                                <th style="width: 25%;">Nombre</th>
+                                <th style="width: 20%;">Teléfono</th>
+                                <th style="width: 20%;">Correo</th>
+                                <th style="width: 10%;">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="listarClientes">
+                            <!-- El contenido de los clientes se agregará dinámicamente aquí -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="../../bootstrap/bootstrap.min.js"></script>
+    <script src="../js/crud-clientes.js"></script>
+</body>
+</html>
