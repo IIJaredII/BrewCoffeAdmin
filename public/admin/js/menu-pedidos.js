@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Función para cargar las opciones de porción para un producto específico
     async function loadPortionOptions(productId, selectElement) {
         try {
-            const response = await fetch(`http://localhost:3000/api/porciones/${productId}`);
+            const response = await fetch(`http://localhost:3000/admin/menu/porciones/${productId}`);
             const portionTypes = await response.json();
             portionTypes.forEach(portion => {
                 const option = document.createElement('option');
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Función para cargar los productos desde el servidor
     async function loadProducts() {
         try {
-            const response = await fetch('http://localhost:3000/api/productos');
+            const response = await fetch('http://localhost:3000/admin/menu/productos');
             const products = await response.json();
             displayProducts(products);
         } catch (error) {
@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function () {
         pagar.disabled = true;
     
         // Enviar el total a la base de datos
-        fetch('http://localhost:3000/api/ventas', {
+        fetch('http://localhost:3000/admin/menu/ventas', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
