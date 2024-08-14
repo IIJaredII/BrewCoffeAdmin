@@ -32,9 +32,9 @@ router.get('/empleados/listar', admin.listarEmpleados);
 //-----------------------------------------------------------------------------------------------------
 
 //menu-pedidos--------------------------------------------------------------------------------------------
-router.get('/menu/ventas', admin.menuPedidos);
-router.get('/menu/admin/porciones/:id', admin.menuPorciones);
-router.post('/menu/admin/ventas', admin.menuVentas);
+router.get('/menu/productos', admin.menuProductos);
+router.get('/menu/porciones/:id', admin.menuPorciones);
+router.post('/menu/ventas', admin.menuVentas);
 
 
 module.exports=router;
